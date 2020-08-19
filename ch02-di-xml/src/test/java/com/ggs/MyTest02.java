@@ -1,23 +1,18 @@
 package com.ggs;
 
-import com.ggs.ba01.Student;
+import com.ggs.ba02.Student;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.Date;
-
-public class MyTest {
+public class MyTest02 {
 
     @Test
     public void test01() {
-        String config = "ba01/applicationContext.xml";
+        String config = "ba02/applicationContext.xml";
         ApplicationContext ac = new ClassPathXmlApplicationContext(config);
         //从容器中获取Student对象
         Student myStudent = (Student) ac.getBean("myStudent");
         System.out.println("student对象=" + myStudent);
-
-        Date myDate = (Date) ac.getBean("mydate");
-        System.out.println("myDate=" + myDate);
     }
 }

@@ -15,14 +15,22 @@
               一个property只能给一个属性赋值
               <property....>
            </bean>
+
+         2) 引用类型的set注入 ： spring调用类的set方法
+           <bean id="xxx" class="yyy">
+              <property name="属性名称" ref="bean的id(对象的名称)" />
+           </bean>
    -->
-    <bean id="myStudent" class="com.ggs.ba01.Student">
-        <property name="name" value="李四lisi"/><!-- setName("李四") -->
-        <property name="age" value="21"/><!-- setAge(21) -->
-        <property name="email" value="lisi@qq.com"/><!-- setEmail("lisi@qq.com") -->
+    <bean id="myStudent" class="com.ggs.ba02.Student">
+        <property name="name" value="李四"/>
+        <property name="age" value="26"/>
+        <!-- 引用类型 -->
+        <property name="school" ref="mySchool"/><!-- setSchool(mySchool) -->
     </bean>
 
-    <bean id="mydate" class="java.util.Date">
-        <property name="time" value="5615615616"/><!-- setTime(5615615616) -->
+    <!-- 声明School对象 -->
+    <bean id="mySchool" class="com.ggs.ba02.School">
+        <property name="name" value="ggs"/>
+        <property name="address" value="佛山"/>
     </bean>
 </beans>
