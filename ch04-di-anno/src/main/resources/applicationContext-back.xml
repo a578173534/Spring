@@ -14,8 +14,16 @@
         1.加入一个新的约束文件spring-context.xsd
         2.给这个新的约束文件起个命名空间的名称
     -->
+    <context:component-scan base-package="com.ggs.ba01"/>
+
+    <!--指定多个包的三种方式-->
+    <!--第一种方式：使用多次组件扫描器，指定不同的包-->
+    <context:component-scan base-package="com.ggs.ba01"/>
     <context:component-scan base-package="com.ggs.ba02"/>
 
-    <!--加载属性配置文件-->
-    <context:property-placeholder location="classpath:test.properties"/>
+    <!--第二种方式：使用分隔符（;或,）分隔多个包名-->
+    <context:component-scan base-package="com.ggs.ba01;com.ggs.ba02"/>
+
+    <!--第三种方式：指定父包-->
+    <context:component-scan base-package="com.ggs"/>
 </beans>
