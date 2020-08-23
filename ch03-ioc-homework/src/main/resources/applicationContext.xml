@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- 你要用哪个对象，就是要bean声明哪个对象 -->
-    <bean id="mysqlDao" class="com.ggs.dao.impl.UserDaoImpl"/>
+    <!--<bean id="mysqlDao" class="com.ggs.dao.impl.UserDaoImpl"/>
     <bean id="oracleDao" class="com.ggs.dao.impl.OracleDaoImpl"/>
 
-    <!-- 声明service对象 -->
+    &lt;!&ndash; 声明service对象 &ndash;&gt;
     <bean id="userService" class="com.ggs.service.impl.UserServiceImpl">
-        <!-- set注入 -->
+        &lt;!&ndash; set注入 &ndash;&gt;
         <property name="dao" ref="oracleDao"/>
-    </bean>
+    </bean>-->
+
+    <!-- 声明组件扫描器 -->
+    <context:component-scan base-package="com.ggs.dao"/>
+    <context:component-scan base-package="com.ggs.service"/>
 </beans>
