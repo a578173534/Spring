@@ -18,7 +18,7 @@ public class MyInvocationHandler implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         //通过代理对象执行方法时，会调用执行这个invoke（）
         Object res = null;
-        if ("doSome".equals(method.getName())) {
+        if ("doSome".equals(method.getName())) { //JoinPoint Pointcut
             ServiceTools.doLog(); //在目标方法之前，输出时间
             //执行目标类的方法，通过Method类实现
             res = method.invoke(target, args); //SomeServiceImpl.doSome()

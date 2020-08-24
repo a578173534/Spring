@@ -21,6 +21,8 @@ public class Student {
         return name;
     }
 
+    // 包名.类名.方法名称
+    // com.ggs.ba02.Student.setName()
     public void setName(String name) {
         System.out.println("setName:" + name);
         this.name = name;
