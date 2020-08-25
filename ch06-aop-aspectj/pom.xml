@@ -16,7 +16,6 @@
 
   <dependencies>
     <dependency>
-      <!-- 单元测试 -->
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
@@ -27,6 +26,13 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
+      <version>5.2.5.RELEASE</version>
+    </dependency>
+
+    <!-- aspectj依赖 -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
       <version>5.2.5.RELEASE</version>
     </dependency>
   </dependencies>
